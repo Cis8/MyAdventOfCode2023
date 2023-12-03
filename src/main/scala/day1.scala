@@ -5,7 +5,8 @@ import scala.util.Using
 
 object day1 {
   @main def part1(): Unit = {
-    val instructions = parse("./src/main/resources/input1.txt")
+    val instructions = Util.parse("input1.txt") ( s =>
+      s.toCharArray.toList )
 
     println(instructions
       .foldLeft(0)((z, arr) => {
@@ -13,14 +14,14 @@ object day1 {
       }))
   }
 
-  private def parse(url: String): List[List[Char]] = {
+  /*private def parse(url: String): List[List[Char]] = {
     Using(Source.fromFile(url)) {
       src =>
         src.getLines()
           .map(r => r.toCharArray.toList)
           .toList
     }.get
-  }
+  }*/
 
   // in the following function it may occur that not all the n digits, where n is the length of the literal of the number,
   // are dropped. This because the last letter could be the starting letter of another digit literal

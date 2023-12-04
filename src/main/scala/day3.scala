@@ -14,11 +14,15 @@ object day3 {
         else 2
       }
 
-    /*def findParts(): List[(Int, Position)] =
-      def findPartsRec(currentPosition: Position): List[(Int, Position)] =
+    def findParts(): List[(Int, Position)] =
+      def findNumbers(prev: Array[Char], curr: Array[Char], next: Array[Char], res: List[(Int, Position)]): List[(Int, Position)] = {
+        val numberRegex = "[0-9]+".r
+        numberRegex.findAllIn(curr.mkString("")).foreach(n => println(s"n ${n.}"))
+        Nil
+      }
 
 
-      findPartsRec((0, 0))*/
+      findNumbers(schema(0), schema(1), schema(2), List())
   }
 
   @main def solveDay3(): Unit = {
@@ -26,7 +30,7 @@ object day3 {
       '.' +: s.toCharArray :+ '.'
     }).toArray :+ Array.fill(142){'.'})
 
-    schema.schema.foreach(r => println(r.mkString))
+    schema.findParts()
     //println(schema.symbolAt(0, 0))
   }
 

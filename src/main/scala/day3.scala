@@ -14,20 +14,20 @@ object day3 {
         else 2
       }
 
-    def findParts(): List[(Int, Position)] =
+    /*def findParts(): List[(Int, Position)] =
       def findPartsRec(currentPosition: Position): List[(Int, Position)] =
 
 
-      findPartsRec((0, 0))
+      findPartsRec((0, 0))*/
   }
 
   @main def solveDay3(): Unit = {
-    val schema: Schema = new Schema(Util.parse("input3.txt")(s => {
-      s.toCharArray
-    }).toArray)
+    val schema: Schema = new Schema(Array.fill(142){'.'} +: Util.parse("input3.txt")(s => {
+      '.' +: s.toCharArray :+ '.'
+    }).toArray :+ Array.fill(142){'.'})
 
-    //parsed.foreach(r => println(r.mkString))
-    println(schema.symbolAt(0, 0))
+    schema.schema.foreach(r => println(r.mkString))
+    //println(schema.symbolAt(0, 0))
   }
 
   def part1(): Unit = {

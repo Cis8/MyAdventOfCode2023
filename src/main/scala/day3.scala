@@ -17,7 +17,7 @@ object day3 {
     def findParts(): List[(Int, Position)] =
       def findNumbers(prev: Array[Char], curr: Array[Char], next: Array[Char], res: List[(Int, Position)]): List[(Int, Position)] = {
         val numberRegex = "[0-9]+".r
-        numberRegex.findAllIn(curr.mkString("")).foreach(n => println(s"n ${n.}"))
+        //numberRegex.findAllIn(curr.mkString("")).foreach(n => println(s"n ${n.}"))
         Nil
       }
 
